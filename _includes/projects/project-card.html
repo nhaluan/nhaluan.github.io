@@ -1,0 +1,24 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-sm-6 col-md-4">
+      <img class="rounded-start" height="225px" src="{{ site.baseurl }}/{{ include.page.image }}">
+    </div>
+    <div class="col-sm-6 col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ include.page.title }} <small
+		        class="text-muted float-end">{{ include.page.date }}</small></h5>
+        <p class="card-text">{{ include.page.summary }}</p>
+        <p>
+          {% for label in include.page.labels %}
+          <span class="badge rounded-pill" style="background-color: var(--tf-pill-bg)">{{ label }}</span>
+          {% endfor %}
+        </p>
+        {% if page.projecturl %}
+        <a class="btn btn-outline-dark" href="{{ page.projecturl }}">Project Site</a>
+        {% else %}
+        <a class="btn btn-outline-dark" href="{{ site.baseurl}}{{ include.page.url }}">Read More</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
