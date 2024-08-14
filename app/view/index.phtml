@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Portfolioo</title>
+</head>
+<body>
+    <header>
+        <h2>Welcome</h2>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="location.php">Location</a>
+        <hr>
+    </header>
+    <div style="text-align: right;">
+        <div style="text-align: right; width:50%;">
+            <address><abbr title="Contact for work"><em><strong>Contact</strong></em></abbr>
+                <pre id="infoDetail" >Vu Nha Luan
+                    0368868618
+                    192 Pham Duc Son, Ward 16, District 8, HCMC
+                    29 Hoang Viet, Ward 4, Tan Binh District, HCMC</address></pre>
+                <div class="button">
+                    <button type="button" onclick="abc()" id="change_color">Change Color</button>
+                </div>
+        </div>
+    </div>
+    <div class="paper">
+        <p id="change_this_text">This text is gonna change color</p>
+    </div>
+    <div class="random_section">
+        <input type="number" id="random_limit" value="5">
+        <button type="button" onclick="bcd()" id="randomBtn">Random Number</button>
+    </div>
+    <footer>
+        <div style="text-align: right;">
+            <hr> Author: Nha Luan
+            <a href="mailto:vunhaluan@gmail.com">vunhaluan@gmail.com</a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+$(document).ready(function() {
+    var random_limit_element = $('#random_limit');
+    if (random_limit_element.length > 0) {
+        var random_limit = random_limit_element.val();
+        console.log(random_limit);
+    } else {
+        console.log('Element with id #random_limit not found.');
+    }
+});
+
+var num = 0;
+var num2 = 0;
+
+function abc() 
+{
+    if (num) {
+        num = 0;
+        let randomColor = getRandomColor();
+        document.getElementById("infoDetail").style.color = randomColor;
+        console.log(num);
+    } else {
+        num = 1;
+        let randomColor = getRandomColor();
+        document.getElementById("infoDetail").style.color = randomColor;
+        console.log(num);
+    }
+}
+
+function bcd() 
+{
+    if (num2) {
+        num2 = 0;
+        let randomNumber = Math.ceil(Math.random()*100) * random_limit;
+        console.log(randomNumber);
+        document.getElementById("change_this_text").innerHTML = randomNumber;
+    } else {
+        num2 = 1;
+        let randomNumber = Math.ceil(Math.random()*100) * random_limit;
+        console.log(randomNumber);
+        document.getElementById("change_this_text").innerHTML = randomNumber;
+    }
+}
+
+function getRandomColor() 
+{
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    var color = "rgb(" + r + "," + g + "," + b + ")";
+    return color;
+}
+</script>
