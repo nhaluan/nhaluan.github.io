@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="qr_style.css">
+</head>
+<body>
+<div class="container">
+        <label for="qrText">Enter URL <br></label><input type="text" id="qrText">
+    <div id="imgBox">
+        <a id="hrefImg" href="" target="_blank">
+            <img src="" alt="" title="" id="qrImg">
+        </a>
+    </div>
+        <button onclick="generateQR()" id="btnGenerate">GENERATE</button>
+    <div id="error-message-box">
+        <p id="error-message-text"></p>
+        <button onclick="hideErrorMessage()">x</button>
+    </div>
+</div>
+</body>
+<script src="qr_script.js?v=1"></script>
+</html>
