@@ -1,13 +1,7 @@
 let imgBox = document.getElementById("imgBox");
 let qrImg = document.getElementById("qrImg");
 let qrText = document.getElementById("qrText");
-let aTag = document.getElementById("hrefImg");
-
-document.addEventListener("DOMContentLoaded", function(){
-    qrText.addEventListener("input", function(){
-        aTag.href = this.value;
-    });
-});
+let aTagHref = document.getElementById("hrefImg");
 
 function showErrorMessage(message) {
     const errorBox = document.getElementById("error-message-box");
@@ -35,7 +29,8 @@ function generateQR() {
         qrImg.title = qrText.value;
         let width = imgBox.offsetWidth;
         let height = imgBox.offsetHeight;
-        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=" + width + "x" + height +"&data=" + qrText.value;
+        qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=" + width + "x" + height + "&data=" + qrText.value;
+        aTagHref.href = qrText.value;
     } else {
         if (imgBox.classList.contains("show-img")) {
             imgBox.classList.remove("show-img");
@@ -43,4 +38,5 @@ function generateQR() {
         showErrorMessage("Invalid URL. Please try again another URL.");
     }
 }
+
 

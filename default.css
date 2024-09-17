@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "JetBrains Mono", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: fit-content;
+    background: #080808;
+    color: #fff;
+}
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(image/cat1920x1080px.svg);
+    background-position: center;
+    background-size: cover;
+}
+.container {
+    padding: 10px 5%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 150px;
+    border: 0 solid goldenrod;
+    position: absolute;
+    border-radius: 60px;
+    transition: 0s;
+}
+.logo:hover {
+    border: 1px solid goldenrod;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+nav ul li a:hover::after {
+    width: 100%;
+    height: 3px;
+    background: #d99a11;
+}
+
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+#about {
+    padding: 60px;
+}
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-1 {
+    flex-basis: 35%;
+}
+.about-col-2 {
+    flex-basis: 60%;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles {
+    display:flex;
+    margin: 20px 0 40px;
+}
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -6px ;
+    transition: 0.3s;
+}
+.tab-links:hover::after {
+    width: 100%;
+    background: #d99a11;
+}
+.tab-links.active-link::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #abdbe3;
+    left: 0;
+    bottom: -6px ;
+}
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span {
+    color: #d99a11;
+    font-size: 14px;
+}
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
